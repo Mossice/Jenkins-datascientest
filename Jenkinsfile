@@ -43,10 +43,12 @@ stages {
     }
     steps {
       script {
-        sh '''
-        echo "$DOCKER_PASS" | docker login -u $DOCKER_ID --password-stdin
-        docker push $DOCKER_ID/$DOCKER_IMAGE:$DOCKER_TAG
-        '''
+        retry(3) {
+          sh '''
+          echo "$DOCKER_PASS" | docker login -u $DOCKER_ID --password-stdin
+          docker push $DOCKER_ID/$DOCKER_IMAGE:$DOCKER_TAG
+          '''
+        }
       }
     }
   }
