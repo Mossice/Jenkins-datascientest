@@ -60,7 +60,6 @@ stages {
     steps {
       script {
       sh '''
-      rm -rf .kube
       mkdir .kube
       ls
       export KUBECONFIG=$(pwd)/.kube/config
@@ -80,7 +79,6 @@ stages {
     steps {
       script {
       sh '''
-      rm -Rf .kube
       mkdir .kube
       ls
       export KUBECONFIG=$(pwd)/.kube/config
@@ -105,7 +103,6 @@ stages {
         }
         script {
           sh '''
-          rm -Rf .kube
           mkdir .kube
           ls
           export KUBECONFIG=$(pwd)/.kube/config
