@@ -60,7 +60,7 @@ stages {
     steps {
       script {
       sh '''
-      ls
+      ls .kube
       export KUBECONFIG=$(pwd)/.kube/config
       cat $KUBECONFIG > .kube/config
       cp fastapi/values.yaml values.yml
@@ -78,7 +78,7 @@ stages {
     steps {
       script {
       sh '''
-      ls
+      ls .kube
       export KUBECONFIG=$(pwd)/.kube/config
       cat $KUBECONFIG > .kube/config
       cp fastapi/values.yaml values.yml
@@ -101,7 +101,7 @@ stages {
         }
         script {
           sh '''
-          ls
+          ls .kube
           export KUBECONFIG=$(pwd)/.kube/config
           cat $KUBECONFIG > .kube/config
           cp fastapi/values.yaml values.yml
