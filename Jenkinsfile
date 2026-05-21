@@ -60,7 +60,7 @@ stages {
     steps {
       script {
       sh '''
-      export KUBECONFIG=/home/jenkins/.kube/config
+      export KUBECONFIG=/home/vagrant/.kube/config
       cat $KUBECONFIG > .kube/config
       cp fastapi/values.yaml values.yml
       cat values.yml
@@ -77,7 +77,7 @@ stages {
     steps {
       script {
       sh '''
-      export KUBECONFIG=/home/jenkins/.kube/config
+      export KUBECONFIG=/home/vagrant/.kube/config
       cat $KUBECONFIG > .kube/config
       cp fastapi/values.yaml values.yml
       cat values.yml
@@ -99,7 +99,7 @@ stages {
         }
         script {
           sh '''
-          export KUBECONFIG=/home/jenkins/.kube/config
+          export KUBECONFIG=/home/vagrant/.kube/config
           cat $KUBECONFIG > .kube/config
           cp fastapi/values.yaml values.yml
           cat values.yml
