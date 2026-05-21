@@ -46,7 +46,7 @@ stages {
       script {
         retry(3) {
           sh '''
-          docker login -u $DOCKER_ID -p $DOCKER_PASS
+          echo $DOCKER_PASS | docker login -u $DOCKER_ID --password-stdin
           docker push $DOCKER_ID/$DOCKER_IMAGE:$DOCKER_TAG
           '''
         }
