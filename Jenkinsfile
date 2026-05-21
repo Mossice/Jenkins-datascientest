@@ -58,6 +58,7 @@ pipeline {
             steps {
                 script {
                     sh '''
+                    export KUBECONFIG=$(pwd)/.kube/config
                     rm -Rf .kube
                     mkdir .kube
                     cat $KUBECONFIG > .kube/config
@@ -76,6 +77,7 @@ pipeline {
             steps {
                 script {
                     sh '''
+                    export KUBECONFIG=$(pwd)/.kube/config
                     rm -Rf .kube
                     mkdir .kube
                     cat $KUBECONFIG > .kube/config
@@ -99,6 +101,7 @@ pipeline {
                 }
                 script {
                     sh '''
+                    export KUBECONFIG=$(pwd)/.kube/config
                     rm -Rf .kube
                     mkdir .kube
                     cat $KUBECONFIG > .kube/config
